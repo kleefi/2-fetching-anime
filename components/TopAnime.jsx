@@ -5,10 +5,10 @@ const TopAnime = ({ api }) => {
   return (
     <>
       <div className="max-w-[1200px] mx-auto grid grid-cols-2  md:grid-cols-4 gap-4 pb-4 mb-4 p-2 md:p-0 ">
-        {api.data.map((item) => (
+        {api.data?.map((item) => (
           <div
             key={item.mal_id}
-            className="md:p-4 p-2 bg-fuchsia-300 shadow-lg"
+            className="md:p-4 p-2 bg-fuchsia-300 shadow-lg hover:scale-105 duration-100 transition-all"
           >
             <Link href={`${process.env.NEXT_PUBLIC_API_URL}/${item.mal_id}`}>
               <Image

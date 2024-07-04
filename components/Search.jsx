@@ -7,14 +7,15 @@ const Search = () => {
   const searchRef = useRef();
   const router = useRouter();
   const handleSearch = (e) => {
+    const keyword = searchRef.current.value;
+    if (!keyword) return;
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
-      const keyword = searchRef.current.value;
       router.push(`/search/${keyword}`);
     }
   };
   return (
-    <div className="relative">
+    <div className="relative w-full md:w-auto">
       <input
         placeholder="Cari disini..."
         className="p-2 rounded-md w-full"
